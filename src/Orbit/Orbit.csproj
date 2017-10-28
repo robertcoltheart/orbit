@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net47</TargetFramework>
+    <StartupObject>Orbit.App</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetProjects.AvalonDock" Version="3.2.46" />
+    <PackageReference Include="Prism.Mef" Version="6.3.0" />
+  </ItemGroup>
+
+  <Import Project="$(SolutionDir)..\build\Wpf.targets" />
+
+  <ItemGroup>
+    <!-- App.xaml -->
+    <Page Remove="App.xaml" />
+    <ApplicationDefinition Include="App.xaml" SubType="Designer" Generator="MSBuild:Compile" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+  </ItemGroup>
+</Project>

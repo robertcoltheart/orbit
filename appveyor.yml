@@ -1,0 +1,12 @@
+image: Visual Studio 2017
+
+build_script:
+  - ps: .\build.ps1
+
+test: off
+
+notifications:
+  - provider: Email
+    on_build_success: false
+    on_build_failure: false
+    on_build_status_changed: false
