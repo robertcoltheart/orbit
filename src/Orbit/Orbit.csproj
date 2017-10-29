@@ -10,7 +10,7 @@
     <PackageReference Include="Prism.Mef" Version="6.3.0" />
   </ItemGroup>
 
-  <Import Project="$(SolutionDir)..\..\build\Wpf.targets" />
+  <Import Project="$(SolutionDir)..\build\Wpf.targets" />
 
   <ItemGroup>
     <!-- App.xaml -->
