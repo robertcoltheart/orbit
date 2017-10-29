@@ -1,12 +1,16 @@
 ﻿using Orbit.Framework;
 using Serilog;
-using Serilog.Core;
 
 namespace Orbit.Bootstrap.Logging
 {
     public class Log : ILog
     {
-        private readonly Logger _logger = new LoggerConfiguration().CreateLogger();
+        private readonly ILogger _logger;
+
+        public Log(ILogger logger)
+        {
+            _logger = logger;
+        }
 
         public void Info(string message)
         {
