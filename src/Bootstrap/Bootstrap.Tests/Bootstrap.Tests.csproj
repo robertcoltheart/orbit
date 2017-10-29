@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net47</TargetFramework>
-    <RootNamespace>Orbit.Framework</RootNamespace>
-    <AssemblyName>Orbit.Framework.Tests</AssemblyName>
+    <RootNamespace>Orbit.Bootstrap</RootNamespace>
+    <AssemblyName>Orbit.Bootstrap.Tests</AssemblyName>
   </PropertyGroup>
+  
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
     <PackageReference Include="NSubstitute" Version="3.1.0" />
@@ -11,7 +13,11 @@
     <PackageReference Include="xunit" Version="2.3.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
+  
   <ItemGroup>
-    <ProjectReference Include="..\Framework\Framework.csproj" />
+    <ProjectReference Include="..\Bootstrap.Container\Bootstrap.Container.csproj" />
+    <ProjectReference Include="..\Bootstrap.Logging\Bootstrap.Logging.csproj" />
+    <ProjectReference Include="..\Bootstrap\Bootstrap.csproj" />
   </ItemGroup>
+  
 </Project>
