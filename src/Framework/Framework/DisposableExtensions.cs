@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Reactive.Disposables;
 
-namespace Framework
+namespace Orbit.Framework
 {
     public static class DisposableExtensions
     {

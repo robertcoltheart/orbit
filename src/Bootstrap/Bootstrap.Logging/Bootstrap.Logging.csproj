@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net47</TargetFramework>
+    <AssemblyName>Orbit.Bootstrap.Logging</AssemblyName>
+    <RootNamespace>Orbit.Bootstrap.Logging</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Serilog" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Framework\Framework\Framework.csproj" />
+    <ProjectReference Include="..\Bootstrap\Bootstrap.csproj" />
+  </ItemGroup>
+
+</Project>

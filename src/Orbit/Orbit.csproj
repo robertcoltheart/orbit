@@ -21,4 +21,10 @@
   <ItemGroup>
     <Compile Remove="obj\**" />
   </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Bootstrap\Bootstrap.Container\Bootstrap.Container.csproj" />
+    <ProjectReference Include="..\Bootstrap\Bootstrap.Logging\Bootstrap.Logging.csproj" />
+    <ProjectReference Include="..\Bootstrap\Bootstrap\Bootstrap.csproj" />
+  </ItemGroup>
 </Project>

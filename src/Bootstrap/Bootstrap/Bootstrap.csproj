@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net47</TargetFramework>
+    <AssemblyName>Orbit.Bootstrap</AssemblyName>
+    <RootNamespace>Orbit.Bootstrap</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Prism.Wpf" Version="6.3.0" />
+  </ItemGroup>
+
+</Project>
