@@ -7,10 +7,10 @@
 
   <ItemGroup>
     <PackageReference Include="DotNetProjects.AvalonDock" Version="3.2.46" />
-    <PackageReference Include="Prism.Mef" Version="6.3.0" />
+    <PackageReference Include="Prism.Wpf" Version="6.3.0" />
   </ItemGroup>
 
-  <Import Project="$(MSBuildThisFileDirectory)\..\..\build\Wpf.targets" />
+  <Import Project="$(MSBuildProjectDirectory)\..\..\build\Wpf.targets" />
 
   <ItemGroup>
     <!-- App.xaml -->

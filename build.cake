@@ -69,13 +69,9 @@ Task("Build")
 {
     CreateDirectory(artifacts);
 
-    DotNetCoreBuild(solution, new DotNetCoreBuildSettings
+    DotNetBuild(solution, x => 
     {
-        Configuration = configuration,
-        ArgumentCustomization = x => x
-            .Append("/p:Version={0}", version)
-            .Append("/p:AssemblyVersion={0}", versionNumber)
-            .Append("/p:FileVersion={0}", versionNumber)
+        x.SetConfiguration(configuration);
     });
 });
 
