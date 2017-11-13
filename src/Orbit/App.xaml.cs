@@ -2,6 +2,7 @@
 using Orbit.Bootstrap;
 using Orbit.Bootstrap.Container;
 using Orbit.Bootstrap.Logging;
+using Orbit.RegionAdapters;
 using Prism.Modularity;
 
 namespace Orbit
@@ -17,9 +18,12 @@ namespace Orbit
             BootstrapFactory.Run(x =>
             {
                 x.UseModuleCatalog(catalog);
+                x.AddRegionAdapter<Window, WindowRegionAdapter>();
 
                 x.UseUnity();
                 x.UseSerilog();
+
+                x.WithShell(() => new Shell());
             });
         }
     }

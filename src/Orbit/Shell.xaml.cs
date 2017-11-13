@@ -1,8 +1,8 @@
 ﻿namespace Orbit
 {
-    public partial class MainWindow
+    public partial class Shell
     {
-        public MainWindow()
+        public Shell()
         {
             InitializeComponent();
         }

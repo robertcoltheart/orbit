@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DotNetProjects.AvalonDock" Version="3.2.46" />
+    <PackageReference Include="DotNetProjects.AvalonDock" Version="3.2.47" />
     <PackageReference Include="Prism.Wpf" Version="6.3.0" />
   </ItemGroup>
 
