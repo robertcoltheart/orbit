@@ -1,25 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- workaround for https://github.com/NuGet/Home/issues/5894 -->
+  <PropertyGroup>
+    <_SdkLanguageName>CSharp</_SdkLanguageName>
+  </PropertyGroup>
+
+  <Import Project="obj\*.props" Condition=" '$(MSBuildProjectExtension)' == '.tmp_proj'" />
+
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net47</TargetFramework>
+    <TargetFramework>net471</TargetFramework>
     <StartupObject>Orbit.App</StartupObject>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="DotNetProjects.AvalonDock" Version="3.2.48" />
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.2.1" PrivateAssets="All" />
     <PackageReference Include="Prism.Wpf" Version="6.3.0" />
-  </ItemGroup>
-
-  <Import Project="$(MSBuildProjectDirectory)\..\..\build\Wpf.targets" />
-
-  <ItemGroup>
-    <!-- App.xaml -->
-    <Page Remove="App.xaml" />
-    <ApplicationDefinition Include="App.xaml" SubType="Designer" Generator="MSBuild:Compile" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="obj\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,4 +24,14 @@
     <ProjectReference Include="..\Bootstrap\Bootstrap.Logging\Bootstrap.Logging.csproj" />
     <ProjectReference Include="..\Bootstrap\Bootstrap\Bootstrap.csproj" />
   </ItemGroup>
+
+  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
+
+  <!-- workaround for https://github.com/NuGet/Home/issues/5894 -->
+  <Import Project="obj\*.targets" Condition=" '$(MSBuildProjectExtension)' == '.tmp_proj'" />
+
+  <ItemGroup>
+    <Compile Remove="obj\**" />
+  </ItemGroup>
+
 </Project>
