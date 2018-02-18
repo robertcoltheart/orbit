@@ -69,9 +69,9 @@ Task("Build")
 {
     CreateDirectory(artifacts);
 
-    DotNetBuild(solution, x => 
+    MSBuild(solution, new MSBuildSettings
     {
-        x.SetConfiguration(configuration);
+        Configuration = configuration
     });
 });
 
