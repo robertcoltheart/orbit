@@ -12,7 +12,6 @@ var configuration = Argument("configuration", "Release");
 var version = "0.1.0";
 var versionNumber = "1.0.0";
 
-var artifacts = Directory("./artifacts");
 var solution = File("./src/Orbit.sln");
 
 //////////////////////////////////////////////////////////////////////
@@ -23,15 +22,6 @@ Task("Clean")
 {
     CleanDirectories("./src/**/bin");
     CleanDirectories("./src/**/obj");
-
-    if (DirectoryExists(artifacts))
-    {
-        DeleteDirectory(artifacts, new DeleteDirectorySettings 
-        {
-            Recursive = true,
-            Force = true
-        });
-    }
 });
 
 Task("Restore")
@@ -67,8 +57,6 @@ Task("Build")
     .IsDependentOn("Restore")
     .Does(() => 
 {
-    CreateDirectory(artifacts);
-
     MSBuild(solution, new MSBuildSettings
     {
         Configuration = configuration
