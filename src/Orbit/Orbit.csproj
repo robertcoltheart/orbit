@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="DotNetProjects.AvalonDock" Version="3.2.48" />
-    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.2.1" PrivateAssets="All" />
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.2.2" PrivateAssets="All" />
     <PackageReference Include="Prism.Wpf" Version="6.3.0" />
   </ItemGroup>
 
