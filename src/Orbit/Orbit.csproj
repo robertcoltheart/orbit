@@ -1,11 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
-  <!-- workaround for https://github.com/NuGet/Home/issues/5894 -->
-  <PropertyGroup>
-    <_SdkLanguageName>CSharp</_SdkLanguageName>
-  </PropertyGroup>
-
-  <Import Project="obj\*.props" Condition=" '$(MSBuildProjectExtension)' == '.tmp_proj'" />
+﻿<Project Sdk="MSBuild.Sdk.Extras/1.2.2">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -15,7 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="DotNetProjects.AvalonDock" Version="3.2.48" />
-    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.2.2" PrivateAssets="All" />
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.4.0" />
     <PackageReference Include="Prism.Wpf" Version="6.3.0" />
   </ItemGroup>
 
@@ -23,15 +16,6 @@
     <ProjectReference Include="..\Bootstrap\Bootstrap.Container\Bootstrap.Container.csproj" />
     <ProjectReference Include="..\Bootstrap\Bootstrap.Logging\Bootstrap.Logging.csproj" />
     <ProjectReference Include="..\Bootstrap\Bootstrap\Bootstrap.csproj" />
-  </ItemGroup>
-
-  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
-
-  <!-- workaround for https://github.com/NuGet/Home/issues/5894 -->
-  <Import Project="obj\*.targets" Condition=" '$(MSBuildProjectExtension)' == '.tmp_proj'" />
-
-  <ItemGroup>
-    <Compile Remove="obj\**" />
   </ItemGroup>
 
 </Project>
