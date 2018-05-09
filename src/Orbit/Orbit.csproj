@@ -1,4 +1,4 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras/1.2.2">
+﻿<Project Sdk="MSBuild.Sdk.Extras">
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <PackageReference Include="DotNetProjects.AvalonDock" Version="3.2.48" />
-    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.4.0" />
     <PackageReference Include="Prism.Wpf" Version="6.3.0" />
   </ItemGroup>
 
