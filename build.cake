@@ -28,7 +28,7 @@ Task("Restore")
     .IsDependentOn("Clean")
     .Does(() => 
 {
-    DotNetCoreRestore(solution);
+    NuGetRestore(solution);
 });
 
 Task("Versioning")
