@@ -1,8 +1,9 @@
 ﻿using System.Windows;
-using Microsoft.Practices.ServiceLocation;
+using CommonServiceLocator;
 using Orbit.Bootstrap.Logging;
 using Orbit.Bootstrap.Services;
 using Orbit.Framework;
+using Prism.Ioc;
 using Prism.Logging;
 using Prism.Modularity;
 using Prism.Regions;
@@ -26,6 +27,7 @@ namespace Orbit.Bootstrap
                 .Register(container)
                 .Register(_configuration.ModuleCatalog)
                 .Register<IServiceLocator, ServiceProvider>()
+                .Register(container as IContainerExtension)
                 .Register<ILoggerFacade, LoggerFacade>()
                 .Register<IModuleInitializer, ModuleInitializer>()
                 .Register<IModuleManager, ModuleManager>()
