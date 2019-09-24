@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Linq;
 using Orbit.Framework;
 using Prism.Ioc;
 using Unity;
-using Unity.Lifetime;
+using Unity.Resolution;
 
 namespace Orbit.Bootstrap.Container
 {
@@ -32,7 +33,7 @@ namespace Orbit.Bootstrap.Container
 
         public IContainerRegistry RegisterInstance(Type type, object instance, string name)
         {
-            Instance.RegisterInstance(type, instance);
+            Instance.RegisterInstance(type, name, instance);
 
             return this;
         }
@@ -89,7 +90,12 @@ namespace Orbit.Bootstrap.Container
 
         public object Resolve(Type type, params (Type Type, object Instance)[] parameters)
         {
-            throw new NotImplementedException();
+            var overrides = parameters
+                .Select(x => new ParameterOverride(x.Type, x.Instance))
+                .Cast<ResolverOverride>()
+                .ToArray();
+
+            return Instance.Resolve(type, overrides);
         }
 
         public object Resolve(Type type, string name)
@@ -99,7 +105,12 @@ namespace Orbit.Bootstrap.Container
 
         public object Resolve(Type type, string name, params (Type Type, object Instance)[] parameters)
         {
-            throw new NotImplementedException();
+            var overrides = parameters
+                .Select(x => new ParameterOverride(x.Type, x.Instance))
+                .Cast<ResolverOverride>()
+                .ToArray();
+
+            return Instance.Resolve(type, name, overrides);
         }
 
         public void FinalizeExtension()
