@@ -2,14 +2,13 @@
 using Orbit.Framework;
 using Prism.Ioc;
 using Unity;
+using Unity.Lifetime;
 
 namespace Orbit.Bootstrap.Container
 {
     public class Container : IContainer, IContainerExtension<IUnityContainer>
     {
         public IUnityContainer Instance { get; } = new UnityContainer();
-
-        public bool SupportsModules => true;
 
         public IContainer Register<T, TInstance>()
             where TInstance : T
@@ -31,24 +30,56 @@ namespace Orbit.Bootstrap.Container
             return Instance.Resolve<T>();
         }
 
-        public void RegisterInstance(Type type, object instance)
+        public IContainerRegistry RegisterInstance(Type type, object instance, string name)
         {
             Instance.RegisterInstance(type, instance);
+
+            return this;
         }
 
-        public void RegisterSingleton(Type from, Type to)
+        public IContainerRegistry RegisterSingleton(Type from, Type to)
         {
             Instance.RegisterSingleton(from, to);
+
+            return this;
         }
 
-        public void Register(Type from, Type to)
+        public IContainerRegistry RegisterSingleton(Type from, Type to, string name)
+        {
+            Instance.RegisterSingleton(from, to, name);
+
+            return this;
+        }
+
+        public IContainerRegistry Register(Type from, Type to)
         {
             Instance.RegisterType(from, to);
+
+            return this;
         }
 
-        public void Register(Type from, Type to, string name)
+        public IContainerRegistry Register(Type from, Type to, string name)
         {
             Instance.RegisterType(from, to, name);
+
+            return this;
+        }
+
+        public bool IsRegistered(Type type)
+        {
+            return Instance.IsRegistered(type);
+        }
+
+        public bool IsRegistered(Type type, string name)
+        {
+            return Instance.IsRegistered(type, name);
+        }
+
+        public IContainerRegistry RegisterInstance(Type type, object instance)
+        {
+            Instance.RegisterInstance(type, instance);
+
+            return this;
         }
 
         public object Resolve(Type type)
@@ -56,18 +87,23 @@ namespace Orbit.Bootstrap.Container
             return Instance.Resolve(type);
         }
 
+        public object Resolve(Type type, params (Type Type, object Instance)[] parameters)
+        {
+            throw new NotImplementedException();
+        }
+
         public object Resolve(Type type, string name)
         {
             return Instance.Resolve(type, name);
         }
 
-        public void FinalizeExtension()
+        public object Resolve(Type type, string name, params (Type Type, object Instance)[] parameters)
         {
+            throw new NotImplementedException();
         }
 
-        public object ResolveViewModelForView(object view, Type viewModelType)
+        public void FinalizeExtension()
         {
-            return Instance.Resolve(viewModelType);
         }
     }
 }

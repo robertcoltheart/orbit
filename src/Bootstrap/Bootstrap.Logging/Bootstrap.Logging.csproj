@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <AssemblyName>Orbit.Bootstrap.Logging</AssemblyName>
     <RootNamespace>Orbit.Bootstrap.Logging</RootNamespace>
   </PropertyGroup>
