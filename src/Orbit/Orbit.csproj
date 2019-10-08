@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dirkster.AvalonDock" Version="3.5.12" />
+    <PackageReference Include="Dirkster.AvalonDock" Version="3.5.13" />
     <PackageReference Include="Prism.Wpf" Version="7.2.0.1367" />
   </ItemGroup>
 
@@ -15,6 +15,9 @@
     <ProjectReference Include="..\Bootstrap\Bootstrap.Container\Bootstrap.Container.csproj" />
     <ProjectReference Include="..\Bootstrap\Bootstrap.Logging\Bootstrap.Logging.csproj" />
     <ProjectReference Include="..\Bootstrap\Bootstrap\Bootstrap.csproj" />
+    <ProjectReference Include="..\Modules\MarketData\MarketData\MarketData.csproj" />
+    <ProjectReference Include="..\Modules\Orders\Orders\Orders.csproj" />
+    <ProjectReference Include="..\Modules\Trades\Trades\Trades.csproj" />
   </ItemGroup>
 
 </Project>

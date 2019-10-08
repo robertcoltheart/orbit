@@ -2,6 +2,9 @@
 using Orbit.Bootstrap;
 using Orbit.Bootstrap.Container;
 using Orbit.Bootstrap.Logging;
+using Orbit.Modules.MarketData;
+using Orbit.Modules.Orders;
+using Orbit.Modules.Trades;
 using Orbit.RegionAdapters;
 using Prism.Modularity;
 
@@ -13,7 +16,10 @@ namespace Orbit
         {
             base.OnStartup(e);
 
-            var catalog = new ModuleCatalog();
+            var catalog = new ModuleCatalog()
+                .AddModule<MarketDataModule>()
+                .AddModule<OrdersModule>()
+                .AddModule<TradesModule>();
 
             BootstrapFactory.Run(x =>
             {
