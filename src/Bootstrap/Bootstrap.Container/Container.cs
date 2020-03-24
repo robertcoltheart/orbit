@@ -91,7 +91,7 @@ namespace Orbit.Bootstrap.Container
         public object Resolve(Type type, params (Type Type, object Instance)[] parameters)
         {
             var overrides = parameters
-                .Select(x => new ParameterOverride(x.Type, x.Instance))
+                .Select(p => new DependencyOverride(p.Type, p.Instance))
                 .Cast<ResolverOverride>()
                 .ToArray();
 
@@ -106,7 +106,7 @@ namespace Orbit.Bootstrap.Container
         public object Resolve(Type type, string name, params (Type Type, object Instance)[] parameters)
         {
             var overrides = parameters
-                .Select(x => new ParameterOverride(x.Type, x.Instance))
+                .Select(p => new DependencyOverride(p.Type, p.Instance))
                 .Cast<ResolverOverride>()
                 .ToArray();
 

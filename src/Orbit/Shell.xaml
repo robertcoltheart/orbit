@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Orbit"
-        xmlns:xcad="http://schemas.xceed.com/wpf/xaml/avalondock"
         xmlns:prism="http://prismlibrary.com/"
+        xmlns:avalondock="https://github.com/Dirkster99/AvalonDock"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525"
         prism:RegionManager.RegionName="{x:Static local:Regions.Window}">
-    <xcad:DockingManager>
-        <xcad:LayoutRoot>
-            <xcad:LayoutPanel Orientation="Horizontal" />
-        </xcad:LayoutRoot>
-    </xcad:DockingManager>
+    <avalondock:DockingManager>
+        <avalondock:LayoutRoot>
+            <avalondock:LayoutPanel Orientation="Horizontal" />
+        </avalondock:LayoutRoot>
+    </avalondock:DockingManager>
 </Window>
