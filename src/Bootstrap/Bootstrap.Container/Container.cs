@@ -1,120 +1,152 @@
 ﻿using System;
-using System.Linq;
 using Orbit.Framework;
 using Prism.Ioc;
+using Prism.Unity;
 using Unity;
-using Unity.Resolution;
 
 namespace Orbit.Bootstrap.Container
 {
     public class Container : IContainer, IContainerExtension<IUnityContainer>
     {
-        public IUnityContainer Instance { get; } = new UnityContainer();
+        public UnityContainerExtension Extension { get; } = new UnityContainerExtension();
 
-        public IContainer Register<T, TInstance>()
-            where TInstance : T
-        {
-            Instance.RegisterType<T, TInstance>();
+        public IUnityContainer Instance => Extension.Instance;
 
-            return this;
-        }
-
-        public IContainer Register<T>(T instance)
-        {
-            Instance.RegisterInstance(instance);
-
-            return this;
-        }
-
-        public T Resolve<T>()
-        {
-            return Instance.Resolve<T>();
-        }
-
-        public IContainerRegistry RegisterInstance(Type type, object instance, string name)
-        {
-            Instance.RegisterInstance(type, name, instance);
-
-            return this;
-        }
-
-        public IContainerRegistry RegisterSingleton(Type from, Type to)
-        {
-            Instance.RegisterSingleton(from, to);
-
-            return this;
-        }
-
-        public IContainerRegistry RegisterSingleton(Type from, Type to, string name)
-        {
-            Instance.RegisterSingleton(from, to, name);
-
-            return this;
-        }
-
-        public IContainerRegistry Register(Type from, Type to)
-        {
-            Instance.RegisterType(from, to);
-
-            return this;
-        }
-
-        public IContainerRegistry Register(Type from, Type to, string name)
-        {
-            Instance.RegisterType(from, to, name);
-
-            return this;
-        }
-
-        public bool IsRegistered(Type type)
-        {
-            return Instance.IsRegistered(type);
-        }
-
-        public bool IsRegistered(Type type, string name)
-        {
-            return Instance.IsRegistered(type, name);
-        }
-
-        public IContainerRegistry RegisterInstance(Type type, object instance)
-        {
-            Instance.RegisterInstance(type, instance);
-
-            return this;
-        }
-
-        public object Resolve(Type type)
-        {
-            return Instance.Resolve(type);
-        }
+        public IScopedProvider CurrentScope => Extension.CurrentScope;
 
         public object Resolve(Type type, params (Type Type, object Instance)[] parameters)
-        {
-            var overrides = parameters
-                .Select(x => new ParameterOverride(x.Type, x.Instance))
-                .Cast<ResolverOverride>()
-                .ToArray();
+       {
+           return Extension.Resolve(type, parameters);
+       }
 
-            return Instance.Resolve(type, overrides);
-        }
+       public object Resolve(Type type, string name)
+       {
+           return Extension.Resolve(type, name);
+       }
 
-        public object Resolve(Type type, string name)
-        {
-            return Instance.Resolve(type, name);
-        }
+       public object Resolve(Type type, string name, params (Type Type, object Instance)[] parameters)
+       {
+           return Extension.Resolve(type, name, parameters);
+       }
 
-        public object Resolve(Type type, string name, params (Type Type, object Instance)[] parameters)
-        {
-            var overrides = parameters
-                .Select(x => new ParameterOverride(x.Type, x.Instance))
-                .Cast<ResolverOverride>()
-                .ToArray();
+       public IScopedProvider CreateScope()
+       {
+           return Extension.CreateScope();
+       }
 
-            return Instance.Resolve(type, name, overrides);
-        }
+       public IContainer Register<T, TInstance>()
+           where TInstance : T
+       {
+           Extension.Register<T, TInstance>();
 
-        public void FinalizeExtension()
-        {
-        }
+           return this;
+       }
+
+       public IContainer Register<T>(T instance)
+       {
+           Extension.RegisterInstance(instance);
+
+           return this;
+       }
+
+       public T Resolve<T>()
+       {
+           return Extension.Resolve<T>();
+       }
+
+       public object Resolve(Type type)
+       {
+           return Extension.Resolve(type);
+       }
+
+       public IContainerRegistry RegisterInstance(Type type, object instance)
+       {
+           return Extension.RegisterInstance(type, instance);
+       }
+
+       public IContainerRegistry RegisterInstance(Type type, object instance, string name)
+       {
+           return Extension.RegisterInstance(type, instance, name);
+       }
+
+       public IContainerRegistry RegisterSingleton(Type from, Type to)
+       {
+           return Extension.RegisterSingleton(from, to);
+       }
+
+       public IContainerRegistry RegisterSingleton(Type from, Type to, string name)
+       {
+           return Extension.RegisterSingleton(from, to, name);
+       }
+
+       public IContainerRegistry RegisterSingleton(Type type, Func<object> factoryMethod)
+       {
+           return Extension.RegisterSingleton(type, factoryMethod);
+       }
+
+       public IContainerRegistry RegisterSingleton(Type type, Func<IContainerProvider, object> factoryMethod)
+       {
+           return Extension.RegisterSingleton(type, factoryMethod);
+       }
+
+       public IContainerRegistry RegisterManySingleton(Type type, params Type[] serviceTypes)
+       {
+           return Extension.RegisterManySingleton(type, serviceTypes);
+       }
+
+       public IContainerRegistry Register(Type from, Type to)
+       {
+           return Extension.Register(from, to);
+       }
+
+       public IContainerRegistry Register(Type from, Type to, string name)
+       {
+           return Extension.Register(from, to, name);
+       }
+
+       public IContainerRegistry Register(Type type, Func<object> factoryMethod)
+       {
+           return Extension.Register(type, factoryMethod);
+       }
+
+       public IContainerRegistry Register(Type type, Func<IContainerProvider, object> factoryMethod)
+       {
+           return Extension.Register(type, factoryMethod);
+       }
+
+       public IContainerRegistry RegisterMany(Type type, params Type[] serviceTypes)
+       {
+           return Extension.RegisterMany(type, serviceTypes);
+       }
+
+       public IContainerRegistry RegisterScoped(Type from, Type to)
+       {
+           return Extension.RegisterScoped(from, to);
+       }
+
+       public IContainerRegistry RegisterScoped(Type type, Func<object> factoryMethod)
+       {
+           return Extension.RegisterScoped(type, factoryMethod);
+       }
+
+       public IContainerRegistry RegisterScoped(Type type, Func<IContainerProvider, object> factoryMethod)
+       {
+           return Extension.RegisterScoped(type, factoryMethod);
+       }
+
+       public bool IsRegistered(Type type)
+       {
+           return Extension.IsRegistered(type);
+       }
+
+       public bool IsRegistered(Type type, string name)
+       {
+           return Extension.IsRegistered(type, name);
+       }
+
+       public void FinalizeExtension()
+       {
+           Extension.FinalizeExtension();
+       }
     }
 }

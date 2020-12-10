@@ -8,7 +8,7 @@ namespace Orbit.Bootstrap
 {
     public class BootstrapperConfiguration : IBootstrapperConfiguration
     {
-        private readonly Dictionary<Type, Delegate> _factories = new Dictionary<Type, Delegate>();
+        private readonly Dictionary<Type, Delegate> factories = new Dictionary<Type, Delegate>();
 
         public IModuleCatalog ModuleCatalog { get; private set; }
 
@@ -18,12 +18,12 @@ namespace Orbit.Bootstrap
 
         public void RegisterService<T>(Func<T> factory)
         {
-            _factories[typeof(T)] = factory;
+            factories[typeof(T)] = factory;
         }
 
         public T ResolveService<T>()
         {
-            return (T) _factories[typeof(T)].DynamicInvoke();
+            return (T) factories[typeof(T)].DynamicInvoke();
         }
 
         public void UseModuleCatalog(IModuleCatalog moduleCatalog)

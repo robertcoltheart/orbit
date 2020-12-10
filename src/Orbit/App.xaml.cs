@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using Orbit.Bootstrap;
 using Orbit.Bootstrap.Container;
-using Orbit.Bootstrap.Logging;
 using Orbit.Modules.MarketData;
 using Orbit.Modules.Orders;
 using Orbit.Modules.Trades;
@@ -27,7 +26,6 @@ namespace Orbit
                 x.AddRegionAdapter<Window, WindowRegionAdapter>();
 
                 x.UseUnity();
-                x.UseSerilog();
 
                 x.WithShell(() => new Shell());
             });

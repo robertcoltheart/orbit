@@ -1,10 +1,6 @@
 ﻿using System.Windows;
-using CommonServiceLocator;
-using Orbit.Bootstrap.Logging;
-using Orbit.Bootstrap.Services;
 using Orbit.Framework;
 using Prism.Ioc;
-using Prism.Logging;
 using Prism.Modularity;
 using Prism.Regions;
 
@@ -12,32 +8,30 @@ namespace Orbit.Bootstrap
 {
     public class Bootstrapper : IBootstrapper
     {
-        private readonly BootstrapperConfiguration _configuration;
+        private readonly BootstrapperConfiguration configuration;
 
         public Bootstrapper(BootstrapperConfiguration configuration)
         {
-            _configuration = configuration;
+            this.configuration = configuration;
         }
 
         public void Run()
         {
-            var container = _configuration.ResolveService<IContainer>();
+            var container = configuration.ResolveService<IContainer>();
 
             container
                 .Register(container)
-                .Register(_configuration.ModuleCatalog)
-                .Register<IServiceLocator, ServiceProvider>()
-                .Register(container as IContainerExtension)
-                .Register<ILoggerFacade, LoggerFacade>()
+                .Register(configuration.ModuleCatalog)
+                .Register(container.Resolve<IContainerExtension>())
                 .Register<IModuleInitializer, ModuleInitializer>()
                 .Register<IModuleManager, ModuleManager>()
                 .Register<IRegionManager, RegionManager>()
                 .Register<IRegionBehaviorFactory, RegionBehaviorFactory>()
                 .Register(CreateRegionAdapters(container));
 
-            ServiceLocator.SetLocatorProvider(() => container.Resolve<IServiceLocator>());
+            ContainerLocator.SetContainerExtension(() => container.Resolve<IContainerExtension>());
             
-            Application.Current.MainWindow = _configuration.WindowFactory();
+            Application.Current.MainWindow = configuration.WindowFactory();
             Application.Current.MainWindow?.Show();
 
             container.Resolve<IModuleManager>().Run();
@@ -47,8 +41,8 @@ namespace Orbit.Bootstrap
         {
             var mappings = new RegionAdapterMappings();
 
-            foreach (var pair in _configuration.RegionAdapters)
-                mappings.RegisterMapping(pair.Key, (IRegionAdapter) container.Resolve(pair.Value));
+            foreach (var (type, adapter) in configuration.RegionAdapters)
+                mappings.RegisterMapping(type, (IRegionAdapter) container.Resolve(adapter));
 
             return mappings;
         }

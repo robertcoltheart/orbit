@@ -1,4 +1,5 @@
 ﻿using Orbit.Framework;
+using Prism.Ioc;
 
 namespace Orbit.Bootstrap.Container
 {
@@ -6,7 +7,10 @@ namespace Orbit.Bootstrap.Container
     {
         public static void UseUnity(this IBootstrapperConfiguration configuration)
         {
-            configuration.RegisterService<IContainer>(() => new Container());
+            var container = new Container();
+
+            configuration.RegisterService<IContainer>(() => container);
+            configuration.RegisterService<IContainerExtension>(() => container);
         }
     }
 }
