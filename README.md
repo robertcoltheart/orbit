@@ -1,6 +1,6 @@
 # Orbit
 
-[![NuGet](https://img.shields.io/nuget/v/Orbit?style=for-the-badge)](https://www.nuget.org/packages/Orbit) [![Build](https://img.shields.io/github/workflow/status/robertcoltheart/Orbit/build?style=for-the-badge)](https://github.com/robertcoltheart/Orbit/actions?query=workflow:build) [![License](https://img.shields.io/github/license/robertcoltheart/Orbit?style=for-the-badge)](https://github.com/robertcoltheart/Orbit/blob/master/LICENSE)
+[![Build](https://img.shields.io/github/workflow/status/robertcoltheart/Orbit/build?style=for-the-badge)](https://github.com/robertcoltheart/Orbit/actions?query=workflow:build) [![License](https://img.shields.io/github/license/robertcoltheart/Orbit?style=for-the-badge)](https://github.com/robertcoltheart/Orbit/blob/master/LICENSE)
 
 A trading client showcasing the latest WPF technologies.
 
