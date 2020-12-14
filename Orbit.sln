@@ -5,37 +5,37 @@ VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framework", "Framework", "{97AE2736-7654-4995-89FA-05F696E88AF8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "Framework\Framework\Framework.csproj", "{666AC8BB-5D0A-47EE-886B-3B4B7C0C1D54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "src\Framework\Framework\Framework.csproj", "{666AC8BB-5D0A-47EE-886B-3B4B7C0C1D54}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Tests", "Framework\Framework.Tests\Framework.Tests.csproj", "{FA7EED82-17A1-4EF3-948B-C45432970357}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Tests", "src\Framework\Framework.Tests\Framework.Tests.csproj", "{FA7EED82-17A1-4EF3-948B-C45432970357}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bootstrap", "Bootstrap", "{334B810E-F6F4-4A2A-9C67-751281D81FE1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap", "Bootstrap\Bootstrap\Bootstrap.csproj", "{94451550-16C0-4062-85B3-C3EEFF2162D7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap", "src\Bootstrap\Bootstrap\Bootstrap.csproj", "{94451550-16C0-4062-85B3-C3EEFF2162D7}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap.Tests", "Bootstrap\Bootstrap.Tests\Bootstrap.Tests.csproj", "{96C6AFC6-8A2E-4DAA-B121-E27EA660C329}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap.Tests", "src\Bootstrap\Bootstrap.Tests\Bootstrap.Tests.csproj", "{96C6AFC6-8A2E-4DAA-B121-E27EA660C329}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap.Container", "Bootstrap\Bootstrap.Container\Bootstrap.Container.csproj", "{EACDE0E4-A114-4C63-9421-A3FB22A1A21B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bootstrap.Container", "src\Bootstrap\Bootstrap.Container\Bootstrap.Container.csproj", "{EACDE0E4-A114-4C63-9421-A3FB22A1A21B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orbit", "Orbit\Orbit.csproj", "{9997B604-2237-4123-A089-C704B1B85F97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orbit", "src\Orbit\Orbit.csproj", "{9997B604-2237-4123-A089-C704B1B85F97}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{89F46890-BF74-40FA-B54F-893F198149FB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Themes", "Framework\Framework.Themes\Framework.Themes.csproj", "{128ACB8A-70E9-4B14-823B-69EB3579C843}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework.Themes", "src\Framework\Framework.Themes\Framework.Themes.csproj", "{128ACB8A-70E9-4B14-823B-69EB3579C843}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketData", "Modules\MarketData\MarketData\MarketData.csproj", "{DA969555-C296-4582-8585-7484635BCAA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketData", "src\Modules\MarketData\MarketData\MarketData.csproj", "{DA969555-C296-4582-8585-7484635BCAA0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders", "Modules\Orders\Orders\Orders.csproj", "{BFD2A2BB-22B8-4B90-8F82-3D642CFC3A26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders", "src\Modules\Orders\Orders\Orders.csproj", "{BFD2A2BB-22B8-4B90-8F82-3D642CFC3A26}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trades", "Modules\Trades\Trades\Trades.csproj", "{952C0C6A-523F-4FD7-A35E-E098792FFBF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trades", "src\Modules\Trades\Trades\Trades.csproj", "{952C0C6A-523F-4FD7-A35E-E098792FFBF5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketData.Tests", "Modules\MarketData\MarketData.Tests\MarketData.Tests.csproj", "{DC41E8BC-4E8D-477A-9BD8-DE2A71F2ED8A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarketData.Tests", "src\Modules\MarketData\MarketData.Tests\MarketData.Tests.csproj", "{DC41E8BC-4E8D-477A-9BD8-DE2A71F2ED8A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MarketData", "MarketData", "{FC597705-6335-470E-A32D-AF7CF47C1C26}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders.Tests", "Modules\Orders\Orders.Tests\Orders.Tests.csproj", "{EDE53EE7-0C3E-4423-A57B-1768F8EE6458}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orders.Tests", "src\Modules\Orders\Orders.Tests\Orders.Tests.csproj", "{EDE53EE7-0C3E-4423-A57B-1768F8EE6458}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trades.Tests", "Modules\Trades\Trades.Tests\Trades.Tests.csproj", "{7FF8FAEC-91E7-4F05-A372-3E08E71ED2B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trades.Tests", "src\Modules\Trades\Trades.Tests\Trades.Tests.csproj", "{7FF8FAEC-91E7-4F05-A372-3E08E71ED2B2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orders", "Orders", "{2D190991-F53C-4226-8CE1-0DB24D2F5A34}"
 EndProject
