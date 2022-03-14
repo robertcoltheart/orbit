@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
+    <AssemblyName>Orbit.Framework.Themes</AssemblyName>
+    <RootNamespace>Orbit.Framework.Themes</RootNamespace>
+    <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 

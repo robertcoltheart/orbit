@@ -4,6 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Orbit.Bootstrap.Tests</RootNamespace>
     <AssemblyName>Orbit.Bootstrap.Tests</AssemblyName>
+    <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
   

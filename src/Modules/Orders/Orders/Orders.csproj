@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
     <AssemblyName>Orbit.Modules.Orders</AssemblyName>
     <RootNamespace>Orbit.Modules.Orders</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>

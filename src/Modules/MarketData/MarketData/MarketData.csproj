@@ -2,9 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <UseWPF>true</UseWPF>
     <AssemblyName>Orbit.Modules.MarketData</AssemblyName>
     <RootNamespace>Orbit.Modules.MarketData</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>

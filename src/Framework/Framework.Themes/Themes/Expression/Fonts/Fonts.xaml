@@ -1,0 +1,8 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:themes="clr-namespace:Orbit.Framework.Themes">
+    <FontFamily x:Key="{x:Static themes:Fonts.FontFamily}">Segoe UI</FontFamily>
+    <system:Double x:Key="{x:Static themes:Fonts.FontSize}">12</system:Double>
+    <TextFormattingMode x:Key="{x:Static themes:Fonts.FontFormatting}">Display</TextFormattingMode>
+</ResourceDictionary>

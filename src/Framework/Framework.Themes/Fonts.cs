@@ -1,4 +1,4 @@
-﻿namespace Framework.Themes;
+﻿namespace Orbit.Framework.Themes;
 
 public static class Fonts
 {
