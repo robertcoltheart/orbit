@@ -10,9 +10,9 @@ public class BootstrapperConfiguration : IBootstrapperConfiguration
 {
     private readonly Dictionary<Type, Delegate> factories = new();
 
-    public IModuleCatalog ModuleCatalog { get; private set; }
+    public IModuleCatalog? ModuleCatalog { get; private set; }
 
-    public Func<Window> WindowFactory { get; private set; }
+    public Func<Window> WindowFactory { get; private set; } = null!;
 
     public Dictionary<Type, Type> RegionAdapters { get; } = new();
 
@@ -23,7 +23,14 @@ public class BootstrapperConfiguration : IBootstrapperConfiguration
 
     public T ResolveService<T>()
     {
-        return (T) factories[typeof(T)].DynamicInvoke();
+        var service = factories[typeof(T)].DynamicInvoke();
+
+        if (service == null)
+        {
+            throw new InvalidOperationException($"Cannot resolve service of type '{typeof(T)}'");
+        }
+
+        return (T) service;
     }
 
     public void UseModuleCatalog(IModuleCatalog moduleCatalog)

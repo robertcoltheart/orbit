@@ -32,7 +32,7 @@ public class Bootstrapper : IBootstrapper
         ContainerLocator.SetContainerExtension(() => container.Resolve<IContainerExtension>());
             
         Application.Current.MainWindow = configuration.WindowFactory();
-        Application.Current.MainWindow?.Show();
+        Application.Current.MainWindow.Show();
 
         container.Resolve<IModuleManager>().Run();
     }
