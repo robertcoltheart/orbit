@@ -1,7 +1,6 @@
-﻿namespace Orbit.Bootstrap
+﻿namespace Orbit.Bootstrap;
+
+public interface IBootstrapper
 {
-    public interface IBootstrapper
-    {
-        void Run();
-    }
+    void Run();
 }

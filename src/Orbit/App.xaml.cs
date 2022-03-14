@@ -7,28 +7,27 @@ using Orbit.Modules.Trades;
 using Orbit.RegionAdapters;
 using Prism.Modularity;
 
-namespace Orbit
+namespace Orbit;
+
+public partial class App
 {
-    public partial class App
+    protected override void OnStartup(StartupEventArgs e)
     {
-        protected override void OnStartup(StartupEventArgs e)
+        base.OnStartup(e);
+
+        var catalog = new ModuleCatalog()
+            .AddModule<MarketDataModule>()
+            .AddModule<OrdersModule>()
+            .AddModule<TradesModule>();
+
+        BootstrapFactory.Run(x =>
         {
-            base.OnStartup(e);
+            x.UseModuleCatalog(catalog);
+            x.AddRegionAdapter<Window, WindowRegionAdapter>();
 
-            var catalog = new ModuleCatalog()
-                .AddModule<MarketDataModule>()
-                .AddModule<OrdersModule>()
-                .AddModule<TradesModule>();
+            x.UseUnity();
 
-            BootstrapFactory.Run(x =>
-            {
-                x.UseModuleCatalog(catalog);
-                x.AddRegionAdapter<Window, WindowRegionAdapter>();
-
-                x.UseUnity();
-
-                x.WithShell(() => new Shell());
-            });
-        }
+            x.WithShell(() => new Shell());
+        });
     }
 }

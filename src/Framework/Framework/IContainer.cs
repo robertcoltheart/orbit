@@ -1,16 +1,15 @@
 ﻿using System;
 
-namespace Orbit.Framework
+namespace Orbit.Framework;
+
+public interface IContainer
 {
-    public interface IContainer
-    {
-        IContainer Register<T, TInstance>()
-            where TInstance : T;
+    IContainer Register<T, TInstance>()
+        where TInstance : T;
 
-        IContainer Register<T>(T instance);
+    IContainer Register<T>(T instance);
 
-        T Resolve<T>();
+    T Resolve<T>();
 
-        object Resolve(Type type);
-    }
+    object Resolve(Type type);
 }

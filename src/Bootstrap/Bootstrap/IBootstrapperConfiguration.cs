@@ -3,18 +3,17 @@ using System.Windows;
 using Prism.Modularity;
 using Prism.Regions;
 
-namespace Orbit.Bootstrap
+namespace Orbit.Bootstrap;
+
+public interface IBootstrapperConfiguration
 {
-    public interface IBootstrapperConfiguration
-    {
-        void RegisterService<T>(Func<T> factory);
+    void RegisterService<T>(Func<T> factory);
 
-        void UseModuleCatalog(IModuleCatalog moduleCatalog);
+    void UseModuleCatalog(IModuleCatalog moduleCatalog);
 
-        void WithShell(Func<Window> windowFactory);
+    void WithShell(Func<Window> windowFactory);
 
-        void AddRegionAdapter<T, TAdapter>()
-            where T : FrameworkElement
-            where TAdapter : IRegionAdapter;
-    }
+    void AddRegionAdapter<T, TAdapter>()
+        where T : FrameworkElement
+        where TAdapter : IRegionAdapter;
 }

@@ -1,7 +1,6 @@
-﻿namespace Orbit
+﻿namespace Orbit;
+
+public static class Regions
 {
-    public static class Regions
-    {
-        public const string Window = "Window";
-    }
+    public const string Window = "Window";
 }

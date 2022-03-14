@@ -4,43 +4,42 @@ using System.Windows;
 using Prism.Modularity;
 using Prism.Regions;
 
-namespace Orbit.Bootstrap
+namespace Orbit.Bootstrap;
+
+public class BootstrapperConfiguration : IBootstrapperConfiguration
 {
-    public class BootstrapperConfiguration : IBootstrapperConfiguration
+    private readonly Dictionary<Type, Delegate> factories = new();
+
+    public IModuleCatalog ModuleCatalog { get; private set; }
+
+    public Func<Window> WindowFactory { get; private set; }
+
+    public Dictionary<Type, Type> RegionAdapters { get; } = new();
+
+    public void RegisterService<T>(Func<T> factory)
     {
-        private readonly Dictionary<Type, Delegate> factories = new();
+        factories[typeof(T)] = factory;
+    }
 
-        public IModuleCatalog ModuleCatalog { get; private set; }
+    public T ResolveService<T>()
+    {
+        return (T) factories[typeof(T)].DynamicInvoke();
+    }
 
-        public Func<Window> WindowFactory { get; private set; }
+    public void UseModuleCatalog(IModuleCatalog moduleCatalog)
+    {
+        ModuleCatalog = moduleCatalog;
+    }
 
-        public Dictionary<Type, Type> RegionAdapters { get; } = new();
+    public void WithShell(Func<Window> windowFactory)
+    {
+        WindowFactory = windowFactory;
+    }
 
-        public void RegisterService<T>(Func<T> factory)
-        {
-            factories[typeof(T)] = factory;
-        }
-
-        public T ResolveService<T>()
-        {
-            return (T) factories[typeof(T)].DynamicInvoke();
-        }
-
-        public void UseModuleCatalog(IModuleCatalog moduleCatalog)
-        {
-            ModuleCatalog = moduleCatalog;
-        }
-
-        public void WithShell(Func<Window> windowFactory)
-        {
-            WindowFactory = windowFactory;
-        }
-
-        public void AddRegionAdapter<T, TAdapter>()
-            where T : FrameworkElement
-            where TAdapter : IRegionAdapter
-        {
-            RegionAdapters[typeof(T)] = typeof(TAdapter);
-        }
+    public void AddRegionAdapter<T, TAdapter>()
+        where T : FrameworkElement
+        where TAdapter : IRegionAdapter
+    {
+        RegionAdapters[typeof(T)] = typeof(TAdapter);
     }
 }

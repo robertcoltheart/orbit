@@ -1,12 +1,11 @@
 ﻿using Xunit;
 
-namespace Orbit.Modules.Orders.Tests
+namespace Orbit.Modules.Orders.Tests;
+
+public class FakeTests
 {
-    public class FakeTests
+    [Fact]
+    public void Test()
     {
-        [Fact]
-        public void Test()
-        {
-        }
     }
 }

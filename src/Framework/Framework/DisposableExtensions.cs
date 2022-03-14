@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Reactive.Disposables;
 
-namespace Orbit.Framework
+namespace Orbit.Framework;
+
+public static class DisposableExtensions
 {
-    public static class DisposableExtensions
+    public static void DisposeWith(this IDisposable disposable, CompositeDisposable container)
     {
-        public static void DisposeWith(this IDisposable disposable, CompositeDisposable container)
-        {
-            container.Add(disposable);
-        }
+        container.Add(disposable);
     }
 }

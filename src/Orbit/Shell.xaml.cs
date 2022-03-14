@@ -1,10 +1,9 @@
-﻿namespace Orbit
+﻿namespace Orbit;
+
+public partial class Shell
 {
-    public partial class Shell
+    public Shell()
     {
-        public Shell()
-        {
-            InitializeComponent();
-        }
+        InitializeComponent();
     }
 }

@@ -1,7 +1,6 @@
-﻿namespace Orbit.Framework
+﻿namespace Orbit.Framework;
+
+public interface ILog
 {
-    public interface ILog
-    {
-        void Info(string message);
-    }
+    void Info(string message);
 }
