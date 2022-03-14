@@ -42,7 +42,9 @@ namespace Orbit.Bootstrap
             var mappings = new RegionAdapterMappings();
 
             foreach (var (type, adapter) in configuration.RegionAdapters)
+            {
                 mappings.RegisterMapping(type, (IRegionAdapter) container.Resolve(adapter));
+            }
 
             return mappings;
         }

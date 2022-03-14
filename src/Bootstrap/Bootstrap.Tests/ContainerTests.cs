@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace Orbit.Bootstrap
+namespace Orbit.Bootstrap.Tests
 {
     public class ContainerTests
     {

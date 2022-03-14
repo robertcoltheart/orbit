@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>Orbit.Bootstrap</RootNamespace>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Orbit.Bootstrap.Tests</RootNamespace>
     <AssemblyName>Orbit.Bootstrap.Tests</AssemblyName>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
