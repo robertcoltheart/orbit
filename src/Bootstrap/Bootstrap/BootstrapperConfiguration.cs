@@ -8,13 +8,13 @@ namespace Orbit.Bootstrap
 {
     public class BootstrapperConfiguration : IBootstrapperConfiguration
     {
-        private readonly Dictionary<Type, Delegate> factories = new Dictionary<Type, Delegate>();
+        private readonly Dictionary<Type, Delegate> factories = new();
 
         public IModuleCatalog ModuleCatalog { get; private set; }
 
         public Func<Window> WindowFactory { get; private set; }
 
-        public Dictionary<Type, Type> RegionAdapters { get; } = new Dictionary<Type, Type>();
+        public Dictionary<Type, Type> RegionAdapters { get; } = new();
 
         public void RegisterService<T>(Func<T> factory)
         {

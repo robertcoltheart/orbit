@@ -3,7 +3,7 @@ using System.Reactive.Disposables;
 using NSubstitute;
 using Xunit;
 
-namespace Orbit.Framework
+namespace Orbit.Framework.Tests
 {
     public class DisposableExtensionsTests
     {

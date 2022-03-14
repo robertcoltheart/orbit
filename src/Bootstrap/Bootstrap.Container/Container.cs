@@ -8,7 +8,7 @@ namespace Orbit.Bootstrap.Container
 {
     public class Container : IContainer, IContainerExtension<IUnityContainer>
     {
-        public UnityContainerExtension Extension { get; } = new UnityContainerExtension();
+        public UnityContainerExtension Extension { get; } = new();
 
         public IUnityContainer Instance => Extension.Instance;
 
