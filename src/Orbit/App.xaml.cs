@@ -1,8 +1,12 @@
 ﻿using System.Windows;
 using Orbit.Bootstrap;
 using Orbit.Bootstrap.Container;
+using Orbit.Modules.Layouts;
 using Orbit.Modules.MarketData;
+using Orbit.Modules.Options;
 using Orbit.Modules.Orders;
+using Orbit.Modules.Splash;
+using Orbit.Modules.Themes;
 using Orbit.Modules.Trades;
 using Orbit.RegionAdapters;
 using Prism.Modularity;
@@ -16,6 +20,10 @@ public partial class App
         base.OnStartup(e);
 
         var catalog = new ModuleCatalog()
+            .AddModule<LayoutsModule>()
+            .AddModule<OptionsModule>()
+            .AddModule<SplashModule>()
+            .AddModule<ThemesModule>()
             .AddModule<MarketDataModule>()
             .AddModule<OrdersModule>()
             .AddModule<TradesModule>();
