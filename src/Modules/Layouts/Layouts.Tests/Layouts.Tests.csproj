@@ -4,6 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <AssemblyName>Orbit.Modules.Layouts.Tests</AssemblyName>
     <RootNamespace>Orbit.Modules.Layouts.Tests</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>

@@ -1,6 +1,8 @@
-﻿namespace Orbit;
+﻿using Orbit.Framework;
 
-public partial class Shell
+namespace Orbit;
+
+public partial class Shell : IShell
 {
     public Shell()
     {

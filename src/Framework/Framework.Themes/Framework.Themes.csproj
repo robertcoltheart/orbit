@@ -4,6 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <AssemblyName>Orbit.Framework.Themes</AssemblyName>
     <RootNamespace>Orbit.Framework.Themes</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>

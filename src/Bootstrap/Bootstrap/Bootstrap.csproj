@@ -4,6 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <AssemblyName>Orbit.Bootstrap</AssemblyName>
     <RootNamespace>Orbit.Bootstrap</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 

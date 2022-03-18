@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using Orbit.Bootstrap;
-using Orbit.Bootstrap.Container;
+using Orbit.Extensions.DependencyInjection;
 using Orbit.Modules.Layouts;
 using Orbit.Modules.MarketData;
 using Orbit.Modules.Options;
@@ -33,7 +33,7 @@ public partial class App
             x.UseModuleCatalog(catalog);
             x.AddRegionAdapter<Window, WindowRegionAdapter>();
 
-            x.UseUnity();
+            x.UseDependencyInjection();
 
             x.WithShell(() => new Shell());
         });

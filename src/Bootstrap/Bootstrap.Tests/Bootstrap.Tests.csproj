@@ -4,6 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <RootNamespace>Orbit.Bootstrap.Tests</RootNamespace>
     <AssemblyName>Orbit.Bootstrap.Tests</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -20,7 +21,6 @@
   </ItemGroup>
   
   <ItemGroup>
-    <ProjectReference Include="..\Bootstrap.Container\Bootstrap.Container.csproj" />
     <ProjectReference Include="..\Bootstrap\Bootstrap.csproj" />
   </ItemGroup>
   

@@ -3,6 +3,7 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
@@ -13,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Bootstrap\Bootstrap.Container\Bootstrap.Container.csproj" />
     <ProjectReference Include="..\Bootstrap\Bootstrap\Bootstrap.csproj" />
+    <ProjectReference Include="..\Extensions\Extensions.DependencyInjection\Extensions.DependencyInjection.csproj" />
     <ProjectReference Include="..\Modules\Layouts\Layouts\Layouts.csproj" />
     <ProjectReference Include="..\Modules\MarketData\MarketData\MarketData.csproj" />
     <ProjectReference Include="..\Modules\Options\Options\Options.csproj" />

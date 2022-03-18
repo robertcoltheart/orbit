@@ -2,15 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <AssemblyName>Orbit.Modules.Trades</AssemblyName>
-    <RootNamespace>Orbit.Modules.Trades</RootNamespace>
+    <AssemblyName>Orbit.Extensions.Exceptionless</AssemblyName>
+    <RootNamespace>Orbit.Extensions.Exceptionless</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <UseWPF>true</UseWPF>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Prism.Wpf" Version="8.1.97" />
+    <PackageReference Include="Exceptionless" Version="4.6.2" />
   </ItemGroup>
 
 </Project>

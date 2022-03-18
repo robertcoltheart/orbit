@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Orbit"
         xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525"
+        Title="MainWindow" Height="350" Width="550"
         prism:RegionManager.RegionName="{x:Static local:Regions.Window}">
     <DockingManager>
         <LayoutRoot>

@@ -4,6 +4,7 @@
     <TargetFramework>net6.0-windows</TargetFramework>
     <AssemblyName>Orbit.Modules.Splash.Tests</AssemblyName>
     <RootNamespace>Orbit.Modules.Splash.Tests</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
