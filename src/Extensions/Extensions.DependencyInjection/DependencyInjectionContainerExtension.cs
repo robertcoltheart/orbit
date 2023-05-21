@@ -3,6 +3,7 @@ using Prism.Ioc;
 
 namespace Orbit.Extensions.DependencyInjection;
 
+//https://github.com/dansiegel/Prism.Container.Extensions/blob/master/src/Prism.Microsoft.DependencyInjection.Extensions/PrismContainerExtension.cs
 public class DependencyInjectionContainerExtension : IContainerExtension<IServiceProvider>
 {
     private readonly ServiceCollection services = new();

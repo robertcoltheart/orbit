@@ -13,4 +13,13 @@
     <PackageReference Include="Prism.Wpf" Version="8.1.97" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ViewControllers\" />
+    <Folder Include="ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Framework\Framework\Framework.csproj" />
+  </ItemGroup>
+
 </Project>
